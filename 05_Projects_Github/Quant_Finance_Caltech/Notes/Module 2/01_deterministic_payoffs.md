@@ -267,3 +267,215 @@ A dollar in the future is worth less than a dollar today because money today can
 Pricing deterministic payoffs means finding the amount of money today that can grow into the known future payment.
 
 This same logic will later be used to price options and other derivatives.
+
+# Deterministic Cash Flows, Loans and IRR
+
+## Key Definitions
+
+## Deterministic Cash Flow
+
+A deterministic cash flow is a sequence of future payments whose amounts and dates are known in advance.
+
+The value of a deterministic cash flow is found by discounting each future payment to the present.
+
+## Present Value
+
+Present Value is the amount of money today that is equivalent to a future payment.
+
+If the interest rate is positive, future money is worth less than money today.
+
+## Discounting
+
+Discounting is the process of converting future payments into today’s value.
+
+For discrete compounding:
+
+PV = X(T) / (1 + r/n)^m
+
+For continuous compounding:
+
+PV = X(T) e^(-rT)
+
+## Cash Flow
+
+A cash flow is a sequence of payments over time.
+
+The present value of a cash flow is the sum of the present values of each payment.
+
+## Annuity
+
+An annuity is a sequence of equal payments made at regular intervals.
+
+Loans and mortgages are typical examples of annuities.
+
+## Perpetual Annuity
+
+A perpetual annuity is an annuity that pays forever.
+
+PV = X / r
+
+where:
+
+- X = constant payment
+- r = interest rate per period
+
+## Internal Rate of Return
+
+The Internal Rate of Return is the discount rate that makes the Net Present Value of a cash flow equal to zero.
+
+IRR is the implied return of a project or investment.
+
+---
+
+# Core Formulas
+
+## Present Value of One Future Payment
+
+PV = X(T) / (1 + r/n)^m
+
+where:
+
+- X(T) = future payment
+- r = annual nominal interest rate
+- n = compounding periods per year
+- m = total number of periods
+
+## Present Value with Continuous Compounding
+
+PV = X(T) e^(-rT)
+
+## Present Value of a Cash Flow
+
+PV = sum of discounted payments
+
+Each payment must be discounted according to its payment date.
+
+## Loan Payment Formula
+
+A fixed-rate loan payment is computed so that:
+
+Loan value = PV of all future payments
+
+This means the constant payment is chosen so that the stream of payments exactly amortizes the loan.
+
+## Loan Balance Recursion
+
+New balance = old balance × (1 + period rate) - payment
+
+This shows that each period:
+
+1. interest is added
+2. payment is subtracted
+
+## Internal Rate of Return Equation
+
+IRR solves:
+
+NPV = 0
+
+This usually requires numerical methods.
+
+---
+
+# Concepts You Must Understand
+
+## Present Value is a Pricing Tool
+
+The price of a deterministic payoff is not based on opinion.
+
+It is the amount needed today to reproduce that future payoff using the risk-free asset.
+
+## Deterministic Pricing is the Base Case
+
+Before pricing random payoffs, we first learn to price known future payments.
+
+This logic will later be extended to:
+
+- bonds
+- forwards
+- options
+- derivative replication
+
+## Loans Are Present Value Problems
+
+A loan can be understood as an exchange of cash flows:
+
+- borrower receives money today
+- borrower pays a sequence of future payments
+
+The payment amount is chosen so that the present value of future payments equals the loan amount.
+
+## APR vs Interest Rate
+
+The mortgage interest rate measures the quoted borrowing rate.
+
+APR includes additional fees and gives a better estimate of the true borrowing cost.
+
+APR is usually higher than the quoted interest rate.
+
+## IRR Is an Implied Rate
+
+IRR is not directly given by the market.
+
+It is the rate implied by the cash flows themselves.
+
+For bonds, the yield will be defined in a similar way.
+
+---
+
+# Common Confusions
+
+## Payoff vs Present Value
+
+Payoff is the future amount received.
+
+Present value is what that payoff is worth today.
+
+## Interest Rate vs Discount Factor
+
+The interest rate tells how money grows.
+
+The discount factor tells how future money is converted back to today.
+
+## APR vs Quoted Rate
+
+The quoted rate may exclude fees.
+
+APR tries to include the full cost of borrowing.
+
+## IRR vs Present Value
+
+Present value uses a given discount rate.
+
+IRR solves for the discount rate that makes NPV equal to zero.
+
+---
+
+# Exam Notes
+
+You should be able to:
+
+- compute present value of a future payment
+- discount a sequence of cash flows
+- understand how fixed loan payments are determined
+- explain the difference between APR and quoted interest rate
+- define IRR
+- explain why bond yield is related to IRR
+
+Important formula intuition:
+
+Future value grows by compounding.
+
+Present value reverses compounding.
+
+---
+
+# Link to Quant Finance
+
+The key idea is replication.
+
+If a future payoff can be created using a trading strategy or a bank account, then its price today must equal the cost of creating that payoff.
+
+This is the same logic that will later be used for derivative pricing.
+
+Deterministic payoff pricing is the foundation for no-arbitrage pricing.
